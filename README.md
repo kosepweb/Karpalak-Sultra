@@ -1,11 +1,10 @@
-
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profil Perusahaan - Inovasi Teknologi</title>
+    <title>Karpalak - Sultra </title>
     <style>
         /* Style dasar untuk halaman */
         body {
@@ -57,6 +56,7 @@
             text-decoration: none;
             margin: 0 15px;
             padding: 10px;
+            transition: background-color 0.3s;
         }
 
         nav a:hover {
@@ -75,6 +75,8 @@
         h2 {
             text-align: center;
             color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .content {
@@ -98,9 +100,9 @@
             color: #fff;
             text-align: center;
             padding: 15px;
-            position: fixed;
-            width: 100%;
+            position: relative;
             bottom: 0;
+            width: 100%;
         }
 
         /* Style untuk portofolio */
@@ -121,6 +123,7 @@
             font-size: 1.5rem;
             background-color: #f4f4f4;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .year-icon:hover {
@@ -143,6 +146,7 @@
             margin: 10% auto;
             padding: 20px;
             width: 60%;
+            max-width: 800px;
             background-color: white;
             border-radius: 8px;
             text-align: center;
@@ -161,6 +165,90 @@
             top: 10px;
             cursor: pointer;
         }
+
+        /* Style untuk Struktur Organisasi */
+        .org-structure {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .org-member {
+            width: 200px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+
+        .org-member img {
+            width: 100%;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+
+        .org-member:hover {
+            transform: scale(1.05);
+        }
+
+        .org-member h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .org-member p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Media Queries untuk responsivitas */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .year-icon {
+                width: 80px;
+                height: 80px;
+                line-height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .org-member {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav {
+                padding: 5px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 0.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .org-member {
+                width: 120px;
+            }
+        }
     </style>
 </head>
 
@@ -174,7 +262,8 @@
 
     <!-- Header dengan background siluet -->
     <header>
-        <h1>Profil Perusahaan - Inovasi Teknologi</h1>
+        <h1>Karpalak - Sultra</h1>
+
     </header>
 
     <!-- Navigasi Interaktif -->
@@ -183,6 +272,7 @@
         <a href="#layanan">Layanan</a>
         <a href="#visi-misi">Visi & Misi</a>
         <a href="#portfolio">Portofolio</a>
+        <a href="#struktur-organisasi">Struktur Organisasi</a>
         <a href="#kontak">Kontak Kami</a>
     </nav>
 
@@ -190,7 +280,7 @@
     <section id="tentang-kami">
         <h2>Tentang Kami</h2>
         <div class="content">
-            <p>Perusahaan kami berdedikasi untuk memberikan solusi teknologi terbaik dengan inovasi yang terus menerus. Kami berkomitmen untuk menghadirkan layanan dan produk yang memajukan era digital di berbagai sektor industri.</p>
+            <p>Karpalak ?</p>
         </div>
     </section>
 
@@ -198,7 +288,7 @@
     <section id="layanan">
         <h2>Layanan Kami</h2>
         <div class="content">
-            <p>Kami menyediakan berbagai layanan teknologi, termasuk pengembangan software, solusi cloud, dan transformasi digital untuk membantu bisnis Anda mencapai efisiensi dan pertumbuhan.</p>
+            <p>Karpalak ?</p>
         </div>
     </section>
 
@@ -206,7 +296,7 @@
     <section id="visi-misi">
         <h2>Visi & Misi</h2>
         <div class="content">
-            <p>Visi kami adalah menjadi pemimpin dalam inovasi teknologi global, sementara misi kami adalah menyediakan solusi teknologi yang berdampak positif bagi masyarakat dan industri.</p>
+            <p>Visi Karpalak ?, sementara misi kami adalahKarpalak ?</p>
         </div>
     </section>
 
@@ -220,25 +310,62 @@
         </div>
     </section>
 
-    <!-- Modal (Pop-up) untuk portofolio -->
-    <div id="modal-portfolio" class="modal">
+    <!-- Modal untuk menampilkan gambar portofolio -->
+    <div class="modal" id="modal-portfolio">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img id="portfolio-img" src="" alt="Foto Dokumentasi">
+            <img id="portfolio-img" src="" alt="Gambar Portofolio">
         </div>
     </div>
+
+    <!-- Struktur Organisasi -->
+    <section id="struktur-organisasi">
+        <h2>Struktur Organisasi</h2>
+        <div class="org-structure">
+            <div class="org-member">
+                <img src="foto111.png" alt="Pendiri 1">
+                <h3>Pendiri 1</h3>
+                <p>Periode: 2018-2020</p>
+            </div>
+            <div class="org-member">
+                <img src="foto111.png" alt="Pendiri 2">
+                <h3>Pendiri 2</h3>
+                <p>Periode: 2019-2021</p>
+            </div>
+            <div class="org-member">
+                <img src="foto111.png" alt="Pendiri 3">
+                <h3>Pendiri 3</h3>
+                <p>Periode: 2020-2022</p>
+            </div>
+            <div class="org-member">
+                <img src="foto111.png" alt="Pendiri 4">
+                <h3>Pendiri 4</h3>
+                <p>Periode: 2021-2023</p>
+            </div>
+            <div class="org-member">
+                <img src="foto111.png" alt="Pendiri 5">
+                <h3>Pendiri 5</h3>
+                <p>Periode: 2020-2023</p>
+            </div>
+            <div class="org-member">
+                <img src="foto111.png" alt="Ketua Sekarang">
+                <h3>Ketua Sekarang</h3>
+                <p>Periode: 2023-Sekarang</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Kontak Kami -->
     <section id="kontak">
         <h2>Kontak Kami</h2>
         <div class="content">
-            <p>Hubungi kami melalui email di <a href="mailto:info@perusahaan.com">info@perusahaan.com</a> atau kunjungi kantor kami di Jalan Teknologi No. 5, Jakarta.</p>
+            <p>Hubungi kami melalui email di <a href="andiirfan1020@gmail.com">andiirfan1020@gmail.com</a> atau telepon: 085345674445</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Inovasi Teknologi. All rights reserved.</p>
+        <p>&copy; 2024 Andi Irfan Maulana. Semua Hak Dilindungi.</p>
     </footer>
 
     <script>
