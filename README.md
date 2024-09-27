@@ -105,6 +105,25 @@
             transform: scale(1.05);
         }
 
+        /* Kontainer gambar prestasi */
+        .achievement-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .achievement {
+            text-align: center;
+            width: 200px;
+        }
+
+        .achievement img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -207,6 +226,10 @@
             .image-container img {
                 width: 120px; /* Ukuran gambar lebih kecil di perangkat kecil */
             }
+
+            .achievement {
+                width: 150px; /* Ukuran gambar prestasi lebih kecil di perangkat kecil */
+            }
         }
 
         @media (max-width: 480px) {
@@ -234,6 +257,10 @@
             .image-container img {
                 width: 100px; /* Ukuran gambar lebih kecil di perangkat lebih kecil */
             }
+
+            .achievement {
+                width: 100px; /* Ukuran gambar prestasi lebih kecil di perangkat lebih kecil */
+            }
         }
     </style>
 </head>
@@ -242,7 +269,7 @@
 
     <!-- Backsound yang otomatis terputar -->
     <audio id="backsound" autoplay loop>
-        <source src="2.mp3" type="audio/mpeg">
+        <source src="karpalak.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -257,6 +284,7 @@
         <a href="#layanan">Layanan</a>
         <a href="#visi-misi">Visi & Misi</a>
         <a href="#portfolio">Portofolio</a>
+        <a href="#prestasi">Prestasi</a> <!-- Tautan baru untuk prestasi -->
         <a href="#struktur-organisasi">Struktur Organisasi</a>
         <a href="#kontak">Kontak Kami</a>
     </nav>
@@ -302,6 +330,33 @@
             <div id="portfolio-images"></div>
         </div>
     </div>
+
+    <!-- Prestasi -->
+    <section id="prestasi">
+        <h2>Prestasi Organisasi</h2>
+        <div class="achievement-container">
+            <div class="achievement">
+                <img src="prestasi1.jpg" alt="Prestasi 1">
+                <p>Keterangan Prestasi 1</p>
+            </div>
+            <div class="achievement">
+                <img src="prestasi2.jpg" alt="Prestasi 2">
+                <p>Keterangan Prestasi 2</p>
+            </div>
+            <div class="achievement">
+                <img src="prestasi3.jpg" alt="Prestasi 3">
+                <p>Keterangan Prestasi 3</p>
+            </div>
+            <div class="achievement">
+                <img src="prestasi4.jpg" alt="Prestasi 4">
+                <p>Keterangan Prestasi 4</p>
+            </div>
+            <div class="achievement">
+                <img src="prestasi5.jpg" alt="Prestasi 5">
+                <p>Keterangan Prestasi 5</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Struktur Organisasi -->
     <section id="struktur-organisasi">
@@ -350,7 +405,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Andi Irfan Maulana. Semua Hak Dilindungi.</p>
+        <p>&copy; 2024 Andi Irfan Maulana. Semua Hak Cipta.</p>
     </footer>
 
     <script>
