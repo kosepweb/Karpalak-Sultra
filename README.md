@@ -1,230 +1,281 @@
 
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pencinta Alam</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profil Perusahaan - Inovasi Teknologi</title>
     <style>
+        /* Style dasar untuk halaman */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f5;
+            background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
         }
+
+        /* Header dengan background siluet */
         header {
-            background: #1E1E2F;
-            color: white;
-            padding: 20px 0;
+            background: url('images/siluet-background.jpg') no-repeat center center/cover;
+            height: 300px;
+            color: #fff;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
+
         header h1 {
+            font-size: 2.5rem;
             margin: 0;
-            font-size: 2.5em;
+            z-index: 1;
         }
+
+        header:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Efek siluet */
+            z-index: 0;
+        }
+
+        /* Style untuk navigasi */
         nav {
-            margin: 20px 0;
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
         }
+
         nav a {
-            margin: 0 15px;
+            color: #fff;
             text-decoration: none;
-            color: white;
-            font-weight: 700;
+            margin: 0 15px;
+            padding: 10px;
         }
+
         nav a:hover {
-            color: #FFD700;
+            background-color: #555;
         }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
+
+        section {
             padding: 20px;
-            background: white;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         h2 {
-            color: #1E1E2F;
-            margin-bottom: 10px;
+            text-align: center;
+            color: #333;
         }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 20px;
+
+        .content {
+            margin: 20px 0;
+            text-align: center;
         }
-        ul {
-            padding-left: 20px;
-        }
-        .footer {
+
+        .image-container {
             text-align: center;
             margin: 20px 0;
-            padding: 15px;
-            background: #1E1E2F;
-            color: white;
-            border-radius: 5px;
         }
-        /* Modal Styles */
+
+        .image-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Style untuk portofolio */
+        .portfolio {
+            text-align: center;
+        }
+
+        .year-icon {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5rem;
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+
+        .year-icon:hover {
+            background-color: #ddd;
+        }
+
+        /* Style untuk modal (pop-up) */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 999;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding-top: 60px;
+            background-color: rgba(0, 0, 0, 0.7);
         }
+
         .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
+            margin: 10% auto;
             padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 700px;
+            width: 60%;
+            background-color: white;
+            border-radius: 8px;
+            text-align: center;
         }
+
+        .modal-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
         .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover, .close:focus {
-            color: black;
-            text-decoration: none;
+            color: #333;
+            font-size: 2rem;
+            position: absolute;
+            right: 20px;
+            top: 10px;
             cursor: pointer;
         }
     </style>
 </head>
+
 <body>
 
-<audio id="background-music" loop autoplay>
-    <source src="https://youtu.be/fgDPSM6oPsc?si=zf8wqQVSqTahoSlH" type="audio/mpeg">
-    Your browser does not support the audio tag.
-</audio>
+    <!-- Backsound yang otomatis terputar -->
+    <audio id="backsound" autoplay loop>
+        <source src="1 (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<header>
-    <h1>Pencinta Alam</h1>
+    <!-- Header dengan background siluet -->
+    <header>
+        <h1>Profil Perusahaan - Inovasi Teknologi</h1>
+    </header>
+
+    <!-- Navigasi Interaktif -->
     <nav>
-        <a href="#about">Tentang Kami</a>
-        <a href="#visi">Visi</a>
-        <a href="#misi">Misi</a>
+        <a href="#tentang-kami">Tentang Kami</a>
         <a href="#layanan">Layanan</a>
-        <a href="#portofolio">Portofolio</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#visi-misi">Visi & Misi</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#kontak">Kontak Kami</a>
     </nav>
-</header>
 
-<div class="container" id="about">
-    <h2>Tentang Kami</h2>
-    <p>Pencinta Alam adalah organisasi yang didirikan untuk mempromosikan kesadaran dan kepedulian terhadap lingkungan. Kami percaya bahwa setiap individu memiliki peran dalam menjaga keanekaragaman hayati dan kelestarian alam.</p>
-</div>
+    <!-- Tentang Kami -->
+    <section id="tentang-kami">
+        <h2>Tentang Kami</h2>
+        <div class="content">
+            <p>Perusahaan kami berdedikasi untuk memberikan solusi teknologi terbaik dengan inovasi yang terus menerus. Kami berkomitmen untuk menghadirkan layanan dan produk yang memajukan era digital di berbagai sektor industri.</p>
+        </div>
+    </section>
 
-<div class="container" id="visi">
-    <h2>Visi</h2>
-    <img src="https://source.unsplash.com/800x400/?nature&format=jpg" alt="Visi Pencinta Alam">
-    <p>Menjadi pelopor dalam pelestarian lingkungan dan edukasi tentang alam, serta membangun kesadaran masyarakat akan pentingnya menjaga ekosistem.</p>
-</div>
+    <!-- Layanan Kami -->
+    <section id="layanan">
+        <h2>Layanan Kami</h2>
+        <div class="content">
+            <p>Kami menyediakan berbagai layanan teknologi, termasuk pengembangan software, solusi cloud, dan transformasi digital untuk membantu bisnis Anda mencapai efisiensi dan pertumbuhan.</p>
+        </div>
+    </section>
 
-<div class="container" id="misi">
-    <h2>Misi</h2>
-    <img src="https://source.unsplash.com/800x400/?conservation&format=jpg" alt="Misi Pencinta Alam">
-    <ul>
-        <li>Mengadakan program edukasi dan pelatihan tentang konservasi lingkungan.</li>
-        <li>Melakukan aksi bersih-bersih dan reboisasi di berbagai lokasi.</li>
-        <li>Mendorong partisipasi masyarakat dalam kegiatan pelestarian alam.</li>
-        <li>Menjalin kemitraan dengan organisasi lingkungan dan pemerintah untuk mendukung proyek konservasi.</li>
-    </ul>
-</div>
+    <!-- Visi dan Misi -->
+    <section id="visi-misi">
+        <h2>Visi & Misi</h2>
+        <div class="content">
+            <p>Visi kami adalah menjadi pemimpin dalam inovasi teknologi global, sementara misi kami adalah menyediakan solusi teknologi yang berdampak positif bagi masyarakat dan industri.</p>
+        </div>
+    </section>
 
-<div class="container" id="layanan">
-    <h2>Layanan</h2>
-    <img src="https://source.unsplash.com/800x400/?ecotourism&format=jpg" alt="Layanan Pencinta Alam">
-    <ul>
-        <li><strong>Edukasi Lingkungan:</strong> Workshop, seminar, dan kegiatan lapangan.</li>
-        <li><strong>Aksi Konservasi:</strong> Program penanaman pohon, pembersihan pantai, dan perlindungan satwa liar.</li>
-        <li><strong>Kegiatan Ekowisata:</strong> Paket wisata ramah lingkungan.</li>
-        <li><strong>Kampanye Kesadaran:</strong> Penyebaran informasi melalui media sosial dan acara komunitas.</li>
-    </ul>
-</div>
+    <!-- Portofolio dengan tahun yang dapat diklik -->
+    <section id="portfolio">
+        <h2>Portofolio</h2>
+        <div class="portfolio">
+            <div class="year-icon" data-year="2020">2020</div>
+            <div class="year-icon" data-year="2021">2021</div>
+            <div class="year-icon" data-year="2022">2022</div>
+        </div>
+    </section>
 
-<div class="container" id="portofolio">
-    <h2>Portofolio</h2>
-    <div class="year-list">
-        <div class="year-item" onclick="showModal('2021')" style="cursor: pointer; color: #1E1E2F; margin-bottom: 10px;">2021</div>
-        <div class="year-item" onclick="showModal('2022')" style="cursor: pointer; color: #1E1E2F; margin-bottom: 10px;">2022</div>
-        <div class="year-item" onclick="showModal('2023')" style="cursor: pointer; color: #1E1E2F; margin-bottom: 10px;">2023</div>
+    <!-- Modal (Pop-up) untuk portofolio -->
+    <div id="modal-portfolio" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="portfolio-img" src="" alt="Foto Dokumentasi">
+        </div>
     </div>
-</div>
 
-<div class="container" id="kontak">
-    <h2>Kontak</h2>
-    <img src="https://source.unsplash.com/800x400/?contact&format=jpg" alt="Kontak Pencinta Alam">
-    <p>
-        <strong>Alamat:</strong> [Masukkan alamat kantor pusat]<br>
-        <strong>Telepon:</strong> [Masukkan nomor telepon]<br>
-        <strong>Email:</strong> [Masukkan alamat email]<br>
-        <strong>Website:</strong> [Masukkan URL website]<br>
-    </p>
-</div>
+    <!-- Kontak Kami -->
+    <section id="kontak">
+        <h2>Kontak Kami</h2>
+        <div class="content">
+            <p>Hubungi kami melalui email di <a href="mailto:info@perusahaan.com">info@perusahaan.com</a> atau kunjungi kantor kami di Jalan Teknologi No. 5, Jakarta.</p>
+        </div>
+    </section>
 
-<div class="footer">
-    <p>&copy; 2024 Pencinta Alam. Semua hak dilindungi.</p>
-</div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Inovasi Teknologi. All rights reserved.</p>
+    </footer>
 
-<!-- Pop-up Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modal-title">Dokumentasi Kegiatan</h2>
-        <div id="modal-body"></div>
-    </div>
-</div>
-
-<script>
-    const documentation = {
-        '2021': [
-            'https://source.unsplash.com/400x300/?forest&format=jpg',
-            'https://source.unsplash.com/400x300/?community&format=jpg'
-        ],
-        '2022': [
-            'https://source.unsplash.com/400x300/?beach&format=jpg',
-            'https://source.unsplash.com/400x300/?planting&format=jpg'
-        ],
-        '2023': [
-            'https://source.unsplash.com/400x300/?wildlife&format=jpg',
-            'https://source.unsplash.com/400x300/?cleaning&format=jpg'
-        ]
-    };
-
-    function showModal(year) {
-        const modal = document.getElementById('myModal');
-        const modalBody = document.getElementById('modal-body');
-        modalBody.innerHTML = '';
-        documentation[year].forEach(url => {
-            const img = document.createElement('img');
-            img.src = url;
-            img.style.width = '100%';
-            img.style.marginBottom = '10px';
-            modalBody.appendChild(img);
+    <script>
+        // Jika pengguna tidak ingin suara otomatis diputar, ini akan memastikan bisa dijeda
+        let audio = document.getElementById("backsound");
+        window.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+            }
         });
-        document.getElementById('modal-title').innerText = `Dokumentasi Kegiatan ${year}`;
-        modal.style.display = 'block';
-    }
 
-    function closeModal() {
-        document.getElementById('myModal').style.display = 'none';
-    }
+        // Menampilkan foto dokumentasi berdasarkan tahun yang dipilih
+        const modal = document.getElementById("modal-portfolio");
+        const modalImg = document.getElementById("portfolio-img");
+        const closeModal = document.querySelector(".close");
+        const yearIcons = document.querySelectorAll(".year-icon");
 
-    window.onclick = function(event) {
-        const modal = document.getElementById('myModal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
-</script>
+        yearIcons.forEach(icon => {
+            icon.addEventListener("click", function () {
+                const year = this.getAttribute("data-year");
+                modal.style.display = "block";
+                modalImg.src = `images/portfolio-${year}.jpg`; // Pastikan Anda memiliki gambar sesuai tahun
+            });
+        });
 
+        // Menutup modal saat tombol close diklik
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Menutup modal saat area luar diklik
+        window.addEventListener("click", function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 </body>
+
 </html>
