@@ -1,20 +1,18 @@
-<!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Karpalak - Sultra </title>
+    <title>Karpalak - Sultra</title>
     <style>
         /* Style dasar untuk halaman */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            overflow-x: hidden; /* Menghindari scroll horizontal */
         }
 
         /* Header dengan background siluet */
@@ -27,14 +25,12 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            animation: fadeIn 1s ease-in-out; /* Animasi header */
         }
 
         header h1 {
             font-size: 2.5rem;
             margin: 0;
             z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         header:before {
@@ -48,12 +44,11 @@
             z-index: 0;
         }
 
-        /* Navigasi */
+        /* Style untuk navigasi */
         nav {
             background-color: #444;
             padding: 10px;
             text-align: center;
-            animation: slideDown 0.5s ease-in-out; /* Animasi menu */
         }
 
         nav a {
@@ -61,23 +56,20 @@
             text-decoration: none;
             margin: 0 15px;
             padding: 10px;
-            transition: background-color 0.3s, transform 0.3s; /* Animasi hover */
+            transition: background-color 0.3s;
         }
 
         nav a:hover {
             background-color: #555;
-            transform: scale(1.1);
         }
 
-        /* Bagian Konten */
         section {
             padding: 20px;
             max-width: 1200px;
             margin: 20px auto;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 0.5s ease-in-out; /* Animasi bagian konten */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
@@ -92,16 +84,21 @@
             text-align: center;
         }
 
+        /* Kontainer gambar portofolio */
         .image-container {
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
             margin: 20px 0;
         }
 
         .image-container img {
-            width: 100%;
-            max-width: 600px;
+            width: 150px; /* Ukuran gambar */
+            height: auto; /* Otomatis menjaga rasio aspek */
             border-radius: 8px;
-            transition: transform 0.3s; /* Efek zoom */
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
         .image-container img:hover {
@@ -116,36 +113,9 @@
             position: relative;
             bottom: 0;
             width: 100%;
-            animation: fadeIn 1s ease-in-out; /* Animasi footer */
         }
 
-        /* Portofolio */
-        .portfolio {
-            text-align: center;
-        }
-
-        .year-icon {
-            display: inline-block;
-            margin: 20px;
-            padding: 20px;
-            border: 2px solid #333;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            text-align: center;
-            line-height: 60px;
-            font-size: 1.5rem;
-            background-color: #f4f4f4;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s; /* Animasi hover */
-        }
-
-        .year-icon:hover {
-            background-color: #ddd;
-            transform: scale(1.1);
-        }
-
-        /* Modal */
+        /* Style untuk modal (pop-up) */
         .modal {
             display: none;
             position: fixed;
@@ -155,7 +125,6 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            animation: fadeIn 0.5s; /* Animasi modal */
         }
 
         .modal-content {
@@ -182,7 +151,7 @@
             cursor: pointer;
         }
 
-        /* Struktur Organisasi */
+        /* Style untuk Struktur Organisasi */
         .org-structure {
             display: flex;
             flex-wrap: wrap;
@@ -231,15 +200,12 @@
                 font-size: 1.5rem;
             }
 
-            .year-icon {
-                width: 80px;
-                height: 80px;
-                line-height: 50px;
-                font-size: 1.2rem;
-            }
-
             .org-member {
                 width: 150px;
+            }
+
+            .image-container img {
+                width: 120px; /* Ukuran gambar lebih kecil di perangkat kecil */
             }
         }
 
@@ -264,37 +230,9 @@
             .org-member {
                 width: 120px;
             }
-        }
 
-        /* Animasi */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
+            .image-container img {
+                width: 100px; /* Ukuran gambar lebih kecil di perangkat lebih kecil */
             }
         }
     </style>
@@ -304,7 +242,7 @@
 
     <!-- Backsound yang otomatis terputar -->
     <audio id="backsound" autoplay loop>
-        <source src="1 (mp3cut.net).mp3" type="audio/mpeg">
+        <source src="2.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -347,13 +285,13 @@
         </div>
     </section>
 
-    <!-- Portofolio dengan tahun yang dapat diklik -->
+    <!-- Portofolio dengan gambar yang dapat diklik -->
     <section id="portfolio">
         <h2>Portofolio</h2>
-        <div class="portfolio">
-            <div class="year-icon" data-year="2020">2020</div>
-            <div class="year-icon" data-year="2021">2021</div>
-            <div class="year-icon" data-year="2022">2022</div>
+        <div class="image-container">
+            <img src="2000.png" alt="Portofolio 2020" class="portfolio-image" data-year="2020">
+            <img src="2001.png" alt="Portofolio 2021" class="portfolio-image" data-year="2021">
+            <img src="2002.png" alt="Portofolio 2022" class="portfolio-image" data-year="2022">
         </div>
     </section>
 
@@ -361,7 +299,7 @@
     <div class="modal" id="modal-portfolio">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img id="portfolio-img" src="" alt="Gambar Portofolio">
+            <div id="portfolio-images"></div>
         </div>
     </div>
 
@@ -424,17 +362,29 @@
             }
         });
 
-        // Menampilkan foto dokumentasi berdasarkan tahun yang dipilih
+        // Menampilkan foto dokumentasi berdasarkan gambar yang diklik
         const modal = document.getElementById("modal-portfolio");
-        const modalImg = document.getElementById("portfolio-img");
+        const portfolioImagesDiv = document.getElementById("portfolio-images");
         const closeModal = document.querySelector(".close");
-        const yearIcons = document.querySelectorAll(".year-icon");
+        const portfolioImages = document.querySelectorAll(".portfolio-image");
 
-        yearIcons.forEach(icon => {
-            icon.addEventListener("click", function () {
-                const year = this.getAttribute("data-year");
-                modal.style.display = "block";
-                modalImg.src = `images/portfolio-${year}.jpg`; // Pastikan Anda memiliki gambar sesuai tahun
+        // Data gambar dokumentasi untuk setiap portofolio
+        const portfolioData = {
+            2020: ['2020-img1.jpg', '2020-img2.jpg', '2020-img3.jpg'],
+            2021: ['2021-img1.jpg', '2021-img2.jpg', '2021-img3.jpg'],
+            2022: ['2022-img1.jpg', '2022-img2.jpg', '2022-img3.jpg'],
+        };
+
+        portfolioImages.forEach(img => {
+            img.addEventListener("click", function () {
+                const year = this.dataset.year;
+                portfolioImagesDiv.innerHTML = ''; // Kosongkan div sebelumnya
+                portfolioData[year].forEach(src => {
+                    const imageElement = document.createElement('img');
+                    imageElement.src = src;
+                    portfolioImagesDiv.appendChild(imageElement);
+                });
+                modal.style.display = "block"; // Tampilkan modal
             });
         });
 
