@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -8,11 +9,12 @@
     <style>
         /* Style dasar untuk halaman */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            overflow-x: hidden; /* Menghindari scroll horizontal */
         }
 
         /* Header dengan background siluet */
@@ -25,12 +27,14 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            animation: fadeIn 1s ease-in-out; /* Animasi header */
         }
 
         header h1 {
             font-size: 2.5rem;
             margin: 0;
             z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         header:before {
@@ -40,15 +44,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Efek siluet */
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
 
-        /* Style untuk navigasi */
+        /* Navigasi */
         nav {
             background-color: #444;
             padding: 10px;
             text-align: center;
+            animation: slideDown 0.5s ease-in-out; /* Animasi menu */
         }
 
         nav a {
@@ -56,20 +61,23 @@
             text-decoration: none;
             margin: 0 15px;
             padding: 10px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Animasi hover */
         }
 
         nav a:hover {
             background-color: #555;
+            transform: scale(1.1);
         }
 
+        /* Bagian Konten */
         section {
             padding: 20px;
             max-width: 1200px;
             margin: 20px auto;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.5s ease-in-out; /* Animasi bagian konten */
         }
 
         h2 {
@@ -93,6 +101,11 @@
             width: 100%;
             max-width: 600px;
             border-radius: 8px;
+            transition: transform 0.3s; /* Efek zoom */
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
         }
 
         footer {
@@ -103,9 +116,10 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            animation: fadeIn 1s ease-in-out; /* Animasi footer */
         }
 
-        /* Style untuk portofolio */
+        /* Portofolio */
         .portfolio {
             text-align: center;
         }
@@ -123,14 +137,15 @@
             font-size: 1.5rem;
             background-color: #f4f4f4;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s; /* Animasi hover */
         }
 
         .year-icon:hover {
             background-color: #ddd;
+            transform: scale(1.1);
         }
 
-        /* Style untuk modal (pop-up) */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -140,6 +155,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.5s; /* Animasi modal */
         }
 
         .modal-content {
@@ -166,7 +182,7 @@
             cursor: pointer;
         }
 
-        /* Style untuk Struktur Organisasi */
+        /* Struktur Organisasi */
         .org-structure {
             display: flex;
             flex-wrap: wrap;
@@ -249,6 +265,38 @@
                 width: 120px;
             }
         }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
@@ -263,7 +311,6 @@
     <!-- Header dengan background siluet -->
     <header>
         <h1>Karpalak - Sultra</h1>
-
     </header>
 
     <!-- Navigasi Interaktif -->
@@ -296,7 +343,7 @@
     <section id="visi-misi">
         <h2>Visi & Misi</h2>
         <div class="content">
-            <p>Visi Karpalak ?, sementara misi kami adalahKarpalak ?</p>
+            <p>Visi Karpalak ?, sementara misi kami adalah Karpalak ?</p>
         </div>
     </section>
 
@@ -359,7 +406,7 @@
     <section id="kontak">
         <h2>Kontak Kami</h2>
         <div class="content">
-            <p>Hubungi kami melalui email di <a href="andiirfan1020@gmail.com">andiirfan1020@gmail.com</a> atau telepon: 085345674445</p>
+            <p>Hubungi kami melalui email di <a href="mailto:andiirfan1020@gmail.com">andiirfan1020@gmail.com</a> atau telepon: 085345674445</p>
         </div>
     </section>
 
